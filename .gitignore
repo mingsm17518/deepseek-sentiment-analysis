@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+
+# 配置文件（敏感信息）
+config.py
+.env
+
+# 但保留示例文件
+!config.py.example
+
+# 情感分析结果
+results/*.csv
+results/*.xlsx
+results/*.png
+results/*.md
+
+# 日志
+logs/*.log
+
+# 数据文件
+data/
+
+# 临时文件
+*.tmp
+*.swp
+.DS_Store

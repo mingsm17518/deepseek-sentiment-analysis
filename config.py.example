@@ -1,0 +1,5 @@
+# DeepSeek API 配置
+# 请填入你的 API Key，可在 https://platform.deepseek.com 获取
+
+API_KEY = "your-api-key-here"
+BASE_URL = "https://api.deepseek.com"
