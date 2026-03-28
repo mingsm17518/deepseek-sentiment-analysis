@@ -8,9 +8,9 @@ plt.rcParams['axes.unicode_minus'] = False
 # 数据
 platforms = ['抖音', '微博', '小红书']
 total = [1021, 717, 1625]
-positive = [492, 403, 988]
-neutral = [426, 192, 536]
-negative = [103, 122, 101]
+positive = [498, 403, 988]
+neutral = [422, 191, 538]
+negative = [101, 123, 99]
 
 # 计算占比
 positive_ratio = [p/t*100 for p, t in zip(positive, total)]

@@ -25,25 +25,25 @@ total_requests = 0
 
 # 读取配置
 def load_config():
-    config = {}
+    cfg = {}
     if os.path.exists('config.py'):
-        import config
-        config['api_key'] = getattr(config, 'API_KEY', os.environ.get('DEEPSEEK_API_KEY'))
-        config['base_url'] = getattr(config, 'BASE_URL', 'https://api.deepseek.com')
+        import config as config_module
+        cfg['api_key'] = getattr(config_module, 'API_KEY', os.environ.get('DEEPSEEK_API_KEY'))
+        cfg['base_url'] = getattr(config_module, 'BASE_URL', 'https://api.deepseek.com')
     else:
-        config['api_key'] = os.environ.get('DEEPSEEK_API_KEY')
-        config['base_url'] = os.environ.get('DEEPSEEK_BASE_URL', 'https://api.deepseek.com')
+        cfg['api_key'] = os.environ.get('DEEPSEEK_API_KEY')
+        cfg['base_url'] = os.environ.get('DEEPSEEK_BASE_URL', 'https://api.deepseek.com')
 
-    if not config['api_key']:
+    if not cfg['api_key']:
         raise ValueError("请在 config.py 中设置 API_KEY 或设置环境变量 DEEPSEEK_API_KEY")
-    return config
+    return cfg
 
-config = load_config()
+cfg = load_config()
 
 # 配置 OpenAI 客户端 (DeepSeek API)
 client = OpenAI(
-    api_key=config['api_key'],
-    base_url=config['base_url']
+    api_key=cfg['api_key'],
+    base_url=cfg['base_url']
 )
 
 # 配置多个数据文件
