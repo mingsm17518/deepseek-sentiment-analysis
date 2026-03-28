@@ -1,8 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib
 import numpy as np
 
-plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei']
+# 设置中文字体
+matplotlib.rcParams['font.family'] = ['AR PL UMing CN', 'Noto Sans CJK SC', 'WenQuanYi Micro Hei', 'SimHei', 'sans-serif']
 plt.rcParams['axes.unicode_minus'] = False
 
 # 数据
